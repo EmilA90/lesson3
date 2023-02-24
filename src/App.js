@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { Profile } from "./Profile";
 
 function App() {
+  const profileListData= [{
+    name: "Emil",
+    email: "emil@yahoo.de",
+    address: "Yasamal,baku"
+  },
+  {
+    name: "Qulu",
+    email: "example@yahoo.de",
+    address: "Ehmedli,baku"
+  },
+  {
+    name: "Nail",
+    email: "sample@yahoo.de",
+    address: "Sebail,Baku"
+  },
+  {
+    name: "Polad",
+    email: "palod@yahoo.de",
+    address: "Nerimanov,Baku"
+  }
+
+
+
+]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <div className="card">
+    {profileListData.map(profile => (
+      <Profile
+        name={profile.name}
+        email={profile.email}
+        address={profile.address}
+      />
+    ))}
+  </div>
+  </>
   );
 }
 
